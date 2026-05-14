@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color:white;
+            color:red;
+            text-align: center;
+            height: 100px;
+            width: 500px;
+        }
+roatete{
+    transform: rotate(90deg);
+    rotate: 0 to 360deg;
+}
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var a=1;
+if(a==2){
+    document.write("a is equal to 2"+"<br>");
+}
+else if(a>2){
+    document.write("a is greater than 2"+"<br>");
+}
+else if(a<2){
+    document.write("a is less than 2"+"<br>");
+}
+else if(a>=2){
+    document.write("a is greater than or equal to 2"+"<br>");
+}
+else
+{
+    document.write("a is less than or equal to 2"+"<br>");
+}
+ document.write("Thank you"+"<br>");
+
+    </script>
+<script>
+    var age=11;
+    if(age>=18){
+        document.write("you are eligible for vote"+"<br>");
+    }
+    else{
+        document.write("you are not eligible for vote"+"<br>");
+    }
+    document.write("Thank you"+"<br>");
+</script>
+      <script>
+var a=1;
+if(a>=1){
+    document.write("The given number is positive"+"<br>");
+}
+else{
+    document.write("The given value is negative"+"<br>")
+}
+      </script>
+      <script>
+        var a=2;
+        var b=3;
+        if(a>b){
+            document.write("a is greater than b"+"<br>");
+        }
+        else if(b>a){
+            document.write("b is greater than a"+"<br>");
+        }
+        else{
+            document.write("a is equal to b"+"<br>");
+        }
+      </script>
+      <script>
+        if (name=="shoaib" && password=="12345")
+        {
+            document.write("It is correct user name and password"+"<br>");
+        }
+else{
+    document.write("It is incorrect user name and password"+"<br>");}
+          </script>
+          <script>
+var a=10;
+if(a%5==0){
+    document.write("The given number is divisible by 5"+"<br>");
+}
+else{
+    document.write("The given number is not divisible by 5"+"<br>");
+}
+          </script>
+<script>
+var a=10;
+var b=20;
+var c=30;
+if(a>b && a>c){
+    document.write("a is the greatest number"+"<br>");
+}
+else if(b>a && b>c){
+    document.write("b is the greatest number"+"<br>");
+}
+else{
+    document.write("c is the greatest number"+"<br>");
+}
+</script>
+
+<script>
+function isPrime(num) {
+    if (num <= 1) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false;
+    }
+    return true;
+}
+
+// Example usage
+var number = 17;
+if (isPrime(number)) {
+    document.write(number + " is a prime number<br>");
+} else {
+    document.write(number + " is not a prime number<br>");
+}
+</script>
+</body>
+</html>
