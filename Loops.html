@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Loops</title>
+    <style>
+        body {
+            color: red;
+            text-align:vertical;
+        }
+    </style>
+       
+>
+</head>
+<body>
+    <h1>For Loop</h1>
+    <script>
+        for (let i = 1; i <= 10; i++) {
+            document.write(i + "<br><br>");
+        }
+        </script>
+        <script>
+         
+let i = 1;
+while (i <= 10) {
+
+    document.write(i + "<br><br>");
+    i++;
+}</script>
+<script>
+let j = 1;
+do {
+    document.write(j + "<br><br>");
+    j++;
+} while (j <= 10);
+</script>
+<style>
+    body {
+        color: blue;
+        text-align: center;
+    }
+</style>
+<script>
+let names = ["Alice", "Bob", "Charlie"];
+for (let name=0; name<names.length;name++) {
+    document.write(names[name] + "<br><br>");
+}
+
+</script>
+<script>
+let Marks=[49,50,48,50,50];
+let sum=0;
+for(let marks=0;  marks<Marks.length;marks++){
+    sum += Marks[marks];
+   document.write("Sum: " + sum+"<br><br>");
+}
+var a=2;
+for(let i=1; i<=10; i++)
+{
+    document.write(a + " x " + i + " = " + (a*i) + "<br><br>");
+}
+</script>
+<script>
+    var a=2;
+    if(a%2==0)
+{
+document.write(a + " is an even number." + "<br><br>");
+}
+else{
+    document.write("Thank you." + "<br><br>");
+}
+    </Script>
+    <script>
+        let b=3;
+        if(b%2!=0)
+    {
+        document.write(b + " is an odd number." + "<br><br>");
+    }
+    else{
+        document.write("Thank you." + "<br><br>");
+    }
+    </script>
+    <script>
+        
+        </script>
+    <div id="timer" style="margin: 2rem auto; padding: 1rem; max-width: 320px; text-align: center; border: 1px solid #ccc; border-radius: 8px;">
+        <h2>Countdown Timer</h2>
+        <div id="countdown" style="font-size: 2rem; margin: 1rem 0;">10</div>
+        <button id="startBtn" style="padding: 0.75rem 1.25rem; font-size: 1rem;">Start 10s timer</button>
+    </div>
+    <script>
+        const countdownEl = document.getElementById("countdown");
+        const startBtn = document.getElementById("startBtn");
+        let intervalId = null;
+
+        function startCountdown(seconds) {
+            clearInterval(intervalId);
+            let remaining = seconds;
+            countdownEl.textContent = remaining;
+
+            intervalId = setInterval(() => {
+                remaining -= 1;
+                if (remaining <= 0) {
+                    clearInterval(intervalId);
+                    countdownEl.textContent = "Time's up!";
+                    return;
+                }
+                countdownEl.textContent = remaining;
+            }, 1000);
+        }
+
+        startBtn.addEventListener("click", () => startCountdown(10));
+    </script>
+</body>
+</html>

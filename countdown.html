@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        </script>
+    
+    <div id="timer" style="margin: 2rem auto; padding: 1rem; max-width: 320px; text-align: center;background-color:grey; border: 1px solid #ccc; border-radius: 8px;">
+        <h2>Countdown Timer</h2>
+        <div id="countdown" style="font-size: 2rem; margin: 1rem 0;">10</div>
+        <button id="startBtn" style="padding: 0.75rem 1.25rem;background-color:white ; font-size: 1rem;">Start 10s timer</button>
+    </div>
+    <script>
+        const countdownEl = document.getElementById("countdown");
+        const startBtn = document.getElementById("startBtn");
+        let intervalId = null;
+
+        function startCountdown(seconds) {
+            clearInterval(intervalId);
+            let remaining = seconds;
+            countdownEl.textContent = remaining;
+
+            intervalId = setInterval(() => {
+                remaining -= 1;
+                if (remaining <= 0) {
+                    clearInterval(intervalId);
+                    countdownEl.textContent = "Time's up!";
+                    return;
+                }
+                countdownEl.textContent = remaining;
+            }, 1000);
+        }
+
+        startBtn.addEventListener("click", () => startCountdown(10));
+    </script>
+</body>
+</html>
