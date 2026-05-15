@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let word = "Hello World";
+        let vowels = ["a", "e", "i", "o", "u"];
+        let count = 0;
+
+        for (let i = 0; i < word.length; i++) {
+            if (vowels.includes(word[i].toLowerCase())) {
+                count++;
+            }
+        }
+
+        document.write("Number of vowels in '" + word + "': " + count);
+    </script>
+</body>
+</html>
