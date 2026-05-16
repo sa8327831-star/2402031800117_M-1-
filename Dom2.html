@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+
+    <script>
+
+        function f()
+        {
+            var name=document.myform.fname.value;
+            var password=document.myform.pword.value;
+            if(name=="shoaib" && password=="1234")
+            {
+                alert("welcome To Our Page " +name);
+            }
+            else
+            {
+                alert("invalid username or password");
+            }
+        }
+    </script>
+    <script>
+function checkMail()
+{
+var a=document.getElementById("email").value;
+var pattern=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+var regex=new RegExp(pattern);
+if(regex.test(a))
+{
+    alert("Valid email address");
+}
+else
+{
+    alert("Invalid email address");
+}
+        </script>
+</head>
+<body>
+    <form name="myform">
+        <input type="text" name="fname" placeholder="Your Name" style="color: white; background-color: black;" required >
+        <input type="text" name="pword" placeholder="Password" style="color: white; background-color: black;" required>
+        <input
+         type="button" value="Submit" style="color: white; background-color: blue;" onclick="f()">
+
+    </form>
+</body>
+</html>
+
+
+
+
+
