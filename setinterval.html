@@ -1,0 +1,15 @@
+<body id="MYBODY">
+    </body>
+    <script>
+var colors=["red","green","blue"];
+var MYBODY=document.getElementBYId("MYBODY");
+var i=0;
+setInterval(()=>{
+MYBODY.style.backgroundColors=colors[i];
+++i;
+if(i==colors.lenth)
+{
+    i=0;
+}
+},1000)
+    </script>
