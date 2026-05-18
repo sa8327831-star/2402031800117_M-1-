@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+          var product=document.getElementBYid("product");
+          var Quantity=document.getElementBYid("Quantity");
+          var Amount=document.getElementBYid("Amount");
+          var prize=document.getElementBYid("Prize");
+
+           product.addEventListener("change",()=>
+           {
+            prize.value=product.value;
+           });
+           amount.addEventListener("focus",()=>{
+            amount.value=product.value*quantity.value;
+            
+    </script>
+</head>
+<body>
+    select product:<select name="" id ="product" style="backgroundcolor:black;">
+<option value="4500">AC</option>
+<option value="45000">TV</option>
+<option value="50000">COOLER</option>
+<option value="11100">REFRIGETER</option>
+<option value="49000">WASHING</option>
+
+    </select>
+    <br><br>
+    CUSTOMER Name:<input type="text" id="CUSTOMER NAME"style="color:white;background-color:black"placeholder="CUSTOMER name"><br><br>
+    NET prize:<input type="text" id="prize"style="color:white;background-color:black"placeholder="prize"><br><br>
+    Quantity:<input type="text" id="Quantity" style="color:white;background-color:black"placeholder="Quantity"><br><br>
+   TOTAL-AMOUNT:<input type="text" id="AMOUNT"style="color:white;background-color:black"placeholder="TOTAL-AMOUNT"><br><br>
+   <td><input type="SUBMIT" style=" color:white; background-color:rgb(0, 225, 255);" value="SUBMIT"</td>
+   
+&nbsp;<input type="NEW-BILL" style=" color:white; background-color:rgb(0, 255, 13);"
+value="NEW-BILL" name="NEW-BILL" /> <br></td>
+
+</body>
+</html>
