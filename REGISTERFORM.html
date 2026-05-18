@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <FORM><h1>REGISTRATION FORM</h1></FORM>
+    <script>
+        function validate()
+        { var form1=document.getElementById("Regform");
+         var name=form1.Name.value;
+         var email=form1.Email.value;
+         var phone=form1.Telephone.value;
+         var What=form1.Subject.value;
+         var Password=form1.password.value;
+         var regEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
+         var regform=/^d{10}$/;
+         if (name=="")
+         {
+            window.alert("Please Enter your Name");
+            return false;
+         }
+         else if(email=="" || !regEmail.test(email))
+         {
+            window.alert("Please Enter Your Valide Email Address ");
+            return false;
+         }
+         else if(password.lenth<6)
+         {
+            alert("Password should be Atleast 6 character Long ");
+            return false;
+         }
+          else if(phone==""|| !regform.test(phone))
+          {
+           alert(" Please Enter Your Phone Number");
+           return false;
+          }
+
+          else if (what.selectedInbox==-1)
+          {
+            alert(" please enter your course");
+            return false;
+          }
+        }
+    </script>
+
+
+<form name="Regform" method="post" id="Regform"
+validate()">
+<table>
+<tr>
+<td colspan="2"><h1 style="text-align:center; style="color:blue;"><i>REGISTRATION FORM</i></h1></td>
+<td></td>
+</tr>
+<tr>
+    <td>Name:</td>
+    <td> <input type="text" size="40"
+        name="NAME"style=" color:white;background-color:black;"placeholder="NAME"required/> <br/></td>
+    </tr>
+    <tr>
+        <td>E-mail Address:</td>
+    <td> <input type="text" size="40"
+        name="Email"style=" color:white;background-color:black;"placeholder="E-mail"required/> <br/></td>
+    </tr>
+<tr>
+    <td>password:</td>
+    <td> <input type="text" size="40"
+        name="PASSWORD"style=" color:white; background-color:black;"placeholder="PASSWORD"required/> <br/></td>
+    </tr>
+<tr>
+    <td>MOBILE:</td>
+    <td> <input type="text" size="40"
+        name="Telephone"style=" color:white;background-color:black;" placeholder="MOBILE-NO" required/> <br/></td>
+    </tr>
+<tr>
+    <td>SELECT YOUR COURSE:</td>
+    <td><select type="text" name="SUBJECT">
+     <option>B.TECH</option>
+     <option>M.TECH</option>
+     <option>BCA</option>
+     <option>MBA</option>
+     <option>MBBS</option>
+    </select> <br></td>
+    </tr><br/><br/>
+    <tr>
+<td>COMMENTS:</td>
+<td><textarea cols="40" name="comments">
+    </textarea> <br> </td>
+    </tr>
+<tr>
+    <td></td>
+<td><input type="SUBMIT" style=" color:white; background-color:rgb(0, 225, 255);" value="SUBMIT"</td>
+&nbsp;<input type="reset" style=" color:white; background-color:rgb(0, 255, 213);"
+value="RESET" name="RESET" /> <br></td>
+</tr>
+</table>
+</form>
+
+
+
+
+
+
+
+
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</form>
+</head>
+<body>
+    
+</body>
+</html>
