@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel Management System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    .reservations {
+      margin-top: 20px;
+    }
+    .reservation {
+      background: #e9f5e9;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hotel Management System</h1>
+  <div class="container">
+    <form id="bookingForm">
+      <label for="name">Guest Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="room">Room Type:</label>
+      <select id="room" required>
+        <option value="Single">Single</option>
+        <option value="Double">Double</option>
+        <option value="Suite">Suite</option>
+      </select>
+
+      <label for="checkin">Check-in Date:</label>
+      <input type="date" id="checkin" required>
+
+      <label for="checkout">Check-out Date:</label>
+      <input type="date" id="checkout" required>
+
+      <button type="submit">Book Room</button>
+    </form>
+
+    <div class="reservations">
+      <h2>Reservations</h2>
+      <div id="reservationList"></div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('bookingForm');
+    const reservationList = document.getElementById('reservationList');
+    let reservations = [];
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const room = document.getElementById('room').value;
+      const checkin = document.getElementById('checkin').value;
+      const checkout = document.getElementById('checkout').value;
+
+      if (new Date(checkout) <= new Date(checkin)) {
+        alert("Check-out date must be after check-in date.");
+        return;
+      }
+
+      const reservation = {
+        name,
+        room,
+        checkin,
+        checkout
+      };
+
+      reservations.push(reservation);
+      displayReservations();
+      form.reset();
+    });
+
+    function displayReservations() {
+      reservationList.innerHTML = "";
+      reservations.forEach((res, index) => {
+        const div = document.createElement('div');
+        div.classList.add('reservation');
+        div.innerHTML = `
+          <strong>${res.name}</strong> booked a <em>${res.room}</em> room 
+          from ${res.checkin} to ${res.checkout}.
+          <br><button onclick="cancelReservation(${index})">Cancel</button>
+        `;
+        reservationList.appendChild(div);
+      });
+    }
+
+    function cancelReservation(index) {
+      reservations.splice(index, 1);
+      displayReservations();
+    }
+  </script>
+</body>
+</html>
