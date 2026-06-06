@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position Demo</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 1500px;
+            margin: 20px;
+        }
+        
+        h1 {
+            padding: 15px;
+            color: white;
+            width: 300px;
+        }
+        /* Static Position */
+        
+        .static {
+            position: static;
+            background-color: blue;
+        }
+        /* Relative Position */
+        
+        .relative {
+            position: relative;
+            top: 20px;
+            left: 40px;
+            background-color: green;
+        }
+        /* Absolute Position */
+        
+        .absolute {
+            position: absolute;
+            top: 250px;
+            left: 200px;
+            background-color: red;
+        }
+        /* Fixed Position */
+        
+        .fixed {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="static">
+        Static Position
+    </h1>
+
+    <h1 class="relative">
+        Relative Position
+    </h1>
+
+    <h1 class="absolute">
+        Absolute Position
+    </h1>
+
+    <h1 class="fixed">
+        Fixed Position
+    </h1>
+
+</body>
+
+</html>

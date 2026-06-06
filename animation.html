@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Object Animation</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000000;
+      overflow: hidden;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(45deg, #e7ff0c, #0668fa);
+      border-radius: 20px;
+      position: relative;
+      animation: moveBox 5s infinite alternate ease-in-out;
+      box-shadow: 0 0 20px rgba(0,255,255,0.6);
+    }
+
+    @keyframes moveBox {
+      0% {
+        transform: translateX(-200px) rotate(0deg) scale(1);
+      }
+
+      50% {
+        transform: translateY(-100px) rotate(180deg) scale(1.2);
+      }
+
+      100% {
+        transform: translateX(200px) rotate(360deg) scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box"></div>
+
+</body>
+</html>
