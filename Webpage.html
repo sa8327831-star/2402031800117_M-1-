@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blinkit Webpage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f8f8f8;
+    }
+    header {
+      background-color: #ffe600;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+    }
+    header h1 {
+      margin: 0;
+      color: #333;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .search-bar input {
+      padding: 8px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .banner {
+      background: url('https://via.placeholder.com/1200x300/ffe600/333?text=Blinkit+Offers') no-repeat center;
+      background-size: cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: bold;
+      color: #333;
+    }
+    .offers {
+      background: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .offers h2 {
+      margin-bottom: 20px;
+    }
+    .offer-card {
+      display: inline-block;
+      background: #ffe600;
+      padding: 15px;
+      margin: 10px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .product-card img {
+      max-width: 100%;
+      height: 150px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+    .product-card h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+      color: #333;
+    }
+    .product-card p {
+      margin: 5px 0;
+      color: #666;
+    }
+    .delivery-info {
+      font-size: 14px;
+      color: #444;
+      margin-top: 5px;
+    }
+    .product-card button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #ffe600;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Blinkit</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Offers</a>
+      <a href="#">Categories</a>
+      <a href="#">Cart</a>
+    </nav>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for products...">
+    </div>
+  </header>
+
+  <div class="banner">Big Savings on Groceries!</div>
+
+  <section class="offers">
+    <h2>Latest Offers</h2>
+    <div class="offer-card">Buy 1 Get 1 Free</div>
+    <div class="offer-card">Flat 20% Off on Fruits</div>
+    <div class="offer-card">Free Delivery Above ₹199</div>
+  </section>
+
+  <section class="products">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150?text=Milk" alt="Milk">
+      <h3>Milk</h3>
+      <p>₹50</p>
+      <div class="delivery-info">Delivery in 10 mins • Ahmedabad</div>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150?text=Bread" alt="Bread">
+      <h3>Bread</h3>
+      <p>₹30</p>
+      <div class="delivery-info">Delivery in 12 mins • Ahmedabad</div>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150?text=Eggs" alt="Eggs">
+      <h3>Eggs</h3>
+      <p>₹60</p>
+      <div class="delivery-info">Delivery in 15 mins • Ahmedabad</div>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150?text=Apples" alt="Apples">
+      <h3>Apples</h3>
+      <p>₹120/kg</p>
+      <div class="delivery-info">Delivery in 20 mins • Ahmedabad</div>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150?text=Rice" alt="Rice">
+      <h3>Rice</h3>
+      <p>₹500/5kg</p>
+      <div class="delivery-info">Delivery in 25 mins • Ahmedabad</div>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/150?text=Snacks" alt="Snacks">
+      <h3>Snacks</h3>
+      <p>₹99</p>
+      <div class="delivery-info">Delivery in 8 mins • Ahmedabad</div>
+      <button>Add to Cart</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Blinkit Clone. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
