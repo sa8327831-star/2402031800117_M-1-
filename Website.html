@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blinkit</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #0f172a;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 0;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #f4b400;
+        }
+        .logo span {
+            color: #111827;
+        }
+        .delivery {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 999px;
+            background: #ffffff;
+            font-size: 0.95rem;
+        }
+        .delivery strong {
+            color: #111827;
+            font-weight: 700;
+        }
+        .search-bar {
+            flex: 1;
+            margin: 0 16px;
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 999px;
+            padding: 10px 16px;
+        }
+        .search-bar input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 0.95rem;
+            color: #111827;
+            background: transparent;
+        }
+        .top-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .top-actions button {
+            border: none;
+            border-radius: 999px;
+            padding: 10px 18px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .login-btn {
+            background: blueviolet;
+            color: #111827;
+        }
+        .cart-btn {
+            background: green;
+            color: #111827;
+        }
+        .hero {
+            margin-top: 24px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, #4f9b2b 0%, #78c233 100%);
+            color: #ffffff;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            min-height: 320px;
+            padding: 32px;
+        }
+        .hero-text {
+            max-width: 52%;
+            z-index: 1;
+        }
+        .hero h1 {
+            margin: 0 0 12px;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.05;
+        }
+        .hero p {
+            margin: 0 0 24px;
+            font-size: 1.05rem;
+            opacity: 0.95;
+            max-width: 420px;
+        }
+        .hero .hero-btn {
+            display: inline-block;
+            padding: 14px 22px;
+            border-radius: 999px;
+            background: #0f172a;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .hero-visual {
+            position: absolute;
+            right: 32px;
+            top: 24px;
+            bottom: 24px;
+            width: 44%;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+        .visual-card {
+            background: rgba(255,255,255,0.16);
+            border-radius: 22px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 110px;
+        }
+        .visual-card img {
+            width: 100%;
+            border-radius: 18px;
+            object-fit: contain;
+            height: 100px;
+        }
+        .cards {
+            margin-top: 28px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+        .card {
+            border-radius: 24px;
+            background: #ffffff;
+            padding: 22px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 220px;
+        }
+        .card strong {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .card p {
+            margin: 0 0 18px;
+            color: #475569;
+            line-height: 1.6;
+        }
+        .card button {
+            align-self: flex-start;
+            border: none;
+            background: #0f172a;
+            color: #ffffff;
+            padding: 12px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .card.blue { background: linear-gradient(135deg, #0ea5e9 0%, #22d3ee 100%); color: #ffffff; }
+        .card.yellow { background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%); color: #111827; }
+        .card.light { background: linear-gradient(135deg, #e2e8f0 0%, #f8fafc 100%); color: #0f172a; }
+        .card.blue button,
+        .card.yellow button,
+        .card.light button {
+            background: #ffffff;
+            color: #111827;
+        }
+        @media (max-width: 960px) {
+            .hero {
+                flex-direction: column;
+                min-height: auto;
+                padding: 24px;
+            }
+            .hero-text {
+                max-width: 100%;
+            }
+            .hero-visual {
+                position: static;
+                width: 100%;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                margin-top: 20px;
+            }
+            .topbar {
+                flex-wrap: wrap;
+            }
+            .search-bar {
+                order: 4;
+                width: 100%;
+                margin: 12px 0 0;
+            }
+        }
+        @media (max-width: 720px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+            .top-actions {
+                width: 100%;
+                justify-content: flex-end;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="topbar">
+            <div class="logo"><span>Blinkit</span>it</div>
+            <div class="delivery"><strong>Delivery in 17 minutes</strong> · Bihar, Gujarat, Mumbai, Goa, Delhi</div>
+            <div class="search-bar">
+                <input type="search" placeholder="Search Here">
+            </div>
+            <div class="top-actions">
+                <button class="login-btn">Login</button>
+                <button class="cart-btn">My Cart</button>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Paan corner</h1>
+                <p>Your favourite paan shop is now online</p>
+                <a href="#" class="hero-btn">Shop Now</a>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-card"><img src="https://images.unsplash.com/photo-1510626176961-4b1069a26360?auto=format&fit=crop&w=600&q=60" alt="Paan pack"></div>
+                <div class="visual-card"><img src="https://images.unsplash.com/photo-1582819064357-f653f742a23c?auto=format&fit=crop&w=600&q=60" alt="Hookah"></div>
+                <div class="visual-card"><img src="https://images.unsplash.com/photo-1598514983578-8bda64a9a7ef?auto=format&fit=crop&w=600&q=60" alt="Cards"></div>
+                <div class="visual-card"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=60" alt="Drink"></div>
+            </div>
+        </section>
+
+        <section class="cards">
+            <article class="card blue">
+                <strong>Pharmacy at your doorstep!</strong>
+                <p>Cough syrups, pain relief sprays
